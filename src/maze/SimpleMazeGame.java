@@ -40,7 +40,7 @@ public class SimpleMazeGame
 	/**
 	 * Creates a small maze.
 	 */
-	public Maze createMaze()
+	public static Maze createMaze()
 	{
 		
 		Maze maze = new Maze();
