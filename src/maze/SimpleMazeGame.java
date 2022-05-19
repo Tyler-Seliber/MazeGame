@@ -193,8 +193,12 @@ public class SimpleMazeGame
 
 	public static void main(String[] args)
 	{
-//		Maze maze = createMaze();
-		Maze maze = loadMaze("large.maze");
+		Maze maze;
+		if ((args.length == 0)) {
+			maze = createMaze();
+		} else {
+			maze = loadMaze(args[0]);
+		}
 	    MazeViewer viewer = new MazeViewer(maze);
 	    viewer.run();
 	}
