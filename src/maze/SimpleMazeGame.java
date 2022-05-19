@@ -44,7 +44,27 @@ public class SimpleMazeGame
 	{
 		
 		Maze maze = new Maze();
-		System.out.println("The maze does not have any rooms yet!");
+		// Create 2 rooms
+		Room room0 = new Room(0);
+		Room room1 = new Room(1);
+		maze.addRoom(room0);
+		maze.addRoom(room1);
+
+		// Create a door between room0 and room1
+		Door door0 = new Door(room0, room1);
+
+		room0.setSide(Direction.North, new Wall());
+		room0.setSide(Direction.East, new Wall());
+		room0.setSide(Direction.West, door0);
+		room0.setSide(Direction.South, new Wall());
+
+		room1.setSide(Direction.East, door0);
+		room1.setSide(Direction.West, new Wall());
+		room1.setSide(Direction.South, new Wall());
+		room1.setSide(Direction.North, new Wall());
+
+		maze.setCurrentRoom(0);
+
 		return maze;
 		
 
